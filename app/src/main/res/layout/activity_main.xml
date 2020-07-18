@@ -4,47 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:padding="10dp"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/logoTextMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/layout_bg"
+        android:clickable="false"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="50dp"
+        android:paddingTop="20dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="20dp"
+        android:text="Matrain"
+        android:textColor="@color/colorBackground"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#0097A7"
+        android:background="@drawable/layout_bg"
         android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+
+        app:layout_constraintTop_toBottomOf="@+id/logoTextMain">
 
         <Button
             android:id="@+id/newGameButton"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="New Game" />
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="New Game"
+
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/leaderBoardButton"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Leaderboard" />
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="Rankings"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Settings" />
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="About"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/exitButton"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Exit" />
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="Exit"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

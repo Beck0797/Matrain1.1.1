@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/aboutLogoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="30dp"
+
+        android:paddingBottom="10sp"
+        android:text="About"
+        android:textColor="@color/colorBackground"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/instructionsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/instructionsText"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:scrollbars="vertical"
+        android:text="Welcome to train your arithmetic skills. There are 3 levels. In Easy level you will be given problems from only addition while in Medium level subtraction is also added. Hard level includes addidition, substraction, multiplication and division. You will be given 20 seconds at the beginning of the game. 2 seconds wll be given for each correct answer while 1 sec will be taken for a wrong answer. \n If you score higher than 10, your score will be added to the global ranking. Good luck :-)"
+        android:textColor="@color/colorBackground"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutLogoText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

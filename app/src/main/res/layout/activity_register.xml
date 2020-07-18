@@ -4,32 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    android:background="@color/colorBackground"
+    android:padding="30dp"
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
+    <TextView
+        android:id="@+id/logoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="50dp"
+        android:paddingTop="20dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="20dp"
+        android:text="Matrain"
+        android:textColor="@color/colorBackground"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/layout_bg"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/logoText">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtEnterName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-black"
             android:text="Enter your name"
-            android:textSize="18sp" />
+            android:textColor="@color/colorBackground"
+            android:textSize="30dp" />
 
         <EditText
             android:id="@+id/usernameEdittext"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-    </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="sans-serif-black"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/colorBackground"
+            android:textSize="30dp" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

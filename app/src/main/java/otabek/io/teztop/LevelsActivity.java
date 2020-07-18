@@ -3,6 +3,7 @@ package otabek.io.teztop;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ public class LevelsActivity extends AppCompatActivity {
     TextView secondsToStart;
     TextView getReadyText;
     CountDownTimer mCountDownTimer;
+    TextView logoText;
+
 
     public void setTimer() {
         mCountDownTimer = new CountDownTimer(4000, 1000) {
@@ -31,6 +34,7 @@ public class LevelsActivity extends AppCompatActivity {
                     Intent gameIntent = new Intent(LevelsActivity.this, GameActivity.class);
                     gameIntent.putExtra("level", level);
                     startActivity(gameIntent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     finish();
 
                 }
@@ -67,6 +71,7 @@ public class LevelsActivity extends AppCompatActivity {
         levelsHolder.setVisibility(View.INVISIBLE);
         getReadyText.setVisibility(View.VISIBLE);
         secondsToStart.setVisibility(View.VISIBLE);
+        logoText.setVisibility(View.INVISIBLE);
         setTimer();
 
     }
@@ -79,9 +84,28 @@ public class LevelsActivity extends AppCompatActivity {
         levelsHolder = findViewById(R.id.levelsContainer);
         secondsToStart = findViewById(R.id.secondsToStartText);
         getReadyText = findViewById(R.id.getReadyText);
+        logoText = findViewById(R.id.logoTextLevels);
 
         secondsToStart.setVisibility(View.INVISIBLE);
         getReadyText.setVisibility(View.INVISIBLE);
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (mCountDownTimer != null) {
+                mCountDownTimer.cancel();
+            }
+            Intent mainIntent = new Intent(LevelsActivity.this, MainActivity.class);
+
+            startActivity(mainIntent);
+
+            finish();
+            finishAffinity();
+        }
+
+
+        return true;
     }
 }

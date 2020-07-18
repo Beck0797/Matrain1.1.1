@@ -4,14 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".LevelsActivity">
+
+    <TextView
+        android:id="@+id/logoTextLevels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/layout_bg"
+        android:clickable="false"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="50dp"
+        android:paddingTop="20dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="20dp"
+        android:text="Matrain"
+        android:textColor="@color/colorBackground"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
 
     <LinearLayout
         android:id="@+id/levelsContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/layout_bg"
         android:orientation="vertical"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,26 +44,44 @@
 
         <Button
             android:id="@+id/easyBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
             android:onClick="chooseLevel"
-            android:text="Easy" />
+            android:text="Easy"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/mediumBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
             android:layout_marginTop="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
             android:onClick="chooseLevel"
-            android:text="Medium" />
+            android:text="Medium"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/hardBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
             android:layout_marginTop="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
             android:onClick="chooseLevel"
-            android:text="Hard" />
+            android:text="Hard"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -48,8 +91,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Get Ready"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:padding="15dp"
+        android:textColor="@color/colorBackground"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/levelsContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,16 +107,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="@drawable/layout_bg"
         android:layout_marginBottom="32dp"
         android:text="3"
-        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-black"
+        android:padding="8dp"
+        android:textColor="@color/colorBackground"
         android:textSize="56sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getReadyText"
-        tools:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/getReadyText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

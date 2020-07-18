@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button leaderBoardButton;
     Button settingsButton;
     Button exitButton;
+    public static String username;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
 
-        String username = sharedPref.getString("username", "none");
+        username = sharedPref.getString("username", "none");
 
 
         Log.i(TAG, "username " + username);
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.settingsButton:
-                intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, AboutActivity.class);
                 break;
 
             case R.id.exitButton:
@@ -67,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         }
+
         startActivity(intent);
+//        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 }

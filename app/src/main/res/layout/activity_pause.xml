@@ -9,36 +9,53 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/layout_bg"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/pauseScore">
 
         <Button
             android:id="@+id/resumeBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Resume" />
+            android:layout_margin="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="Resume"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/restartBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Restart" />
+            android:layout_margin="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="Restart"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/exitBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Exit" />
+            android:layout_margin="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="Exit"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <TextView
@@ -47,23 +64,32 @@
         android:layout_height="wrap_content"
         android:background="@drawable/layout_bg"
         android:fontFamily="sans-serif-black"
-        android:padding="10dp"
+        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="10sp"
         android:text="Pause"
+
         android:textColor="@color/colorBackground"
-        android:textSize="30sp"
+        android:textSize="45sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pauseScore" />
 
     <TextView
         android:id="@+id/pauseModeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:padding="8dp"
         android:text="Mode:Easy"
+        android:textColor="@color/colorBackground"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -72,9 +98,26 @@
         android:id="@+id/pauseScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="sans-serif-black"
+        android:padding="8dp"
+        android:text="Score: 15"
+        android:textColor="@color/colorBackground"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/soundImage"
+        app:layout_constraintStart_toEndOf="@+id/pauseModeText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/soundImage"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Score: 15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_speaker_on" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
