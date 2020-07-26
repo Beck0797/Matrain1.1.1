@@ -54,7 +54,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Play Again"
+            android:text="@string/play_again_text"
             android:textColor="@color/colorBackground"
             android:textSize="18sp" />
 
@@ -68,7 +68,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Share"
+            android:text="@string/share_text"
             android:textColor="@color/colorBackground"
             android:textSize="18sp" />
     </LinearLayout>

@@ -3,6 +3,7 @@ package otabek.io.teztop;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,11 +21,14 @@ public class PauseActivity extends AppCompatActivity {
     int timeLeft;
     ImageView soundImage;
     Boolean isSoundOn;
+    Button mainMenuBtn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_pause);
 
         score = getIntent().getIntExtra("score", 0);
@@ -37,6 +41,7 @@ public class PauseActivity extends AppCompatActivity {
         exitBtn = findViewById(R.id.exitBtn);
         scoreTextView = findViewById(R.id.pauseScore);
         soundImage = findViewById(R.id.soundImage);
+        mainMenuBtn = findViewById(R.id.mainMenuBtn);
 
         scoreTextView.setText("Score: " + score);
 
@@ -59,6 +64,13 @@ public class PauseActivity extends AppCompatActivity {
                 GameActivity.isSoundOn = true;
                 isSoundOn = true;
             }
+        });
+
+        mainMenuBtn.setOnClickListener(v -> {
+            Intent mainIntent = new Intent(PauseActivity.this, MainActivity.class);
+            GameActivity.gameActivity.finish();
+            startActivity(mainIntent);
+            finish();
         });
 
         resumeBtn.setOnClickListener(v -> {

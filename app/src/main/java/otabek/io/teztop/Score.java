@@ -1,6 +1,8 @@
 package otabek.io.teztop;
 
-public class Score {
+import java.io.Serializable;
+
+public class Score implements Serializable, Comparable {
     String username, level;
     int score;
 
@@ -39,4 +41,10 @@ public class Score {
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+        int compareScore = ((Score) o).getScore();
+
+        return compareScore - this.score;
+    }
 }

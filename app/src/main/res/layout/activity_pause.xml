@@ -29,7 +29,7 @@
             android:layout_margin="8dp"
             android:background="@drawable/button_bg"
             android:fontFamily="sans-serif-black"
-            android:text="Resume"
+            android:text="@string/resume_text"
             android:textColor="@color/colorWhiteBackground"
             android:textSize="24sp" />
 
@@ -41,7 +41,19 @@
             android:layout_margin="8dp"
             android:background="@drawable/button_bg"
             android:fontFamily="sans-serif-black"
-            android:text="Restart"
+            android:text="@string/restart_text"
+            android:textColor="@color/colorWhiteBackground"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/mainMenuBtn"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/main_menu_text"
             android:textColor="@color/colorWhiteBackground"
             android:textSize="24sp" />
 
@@ -53,7 +65,7 @@
             android:layout_margin="8dp"
             android:background="@drawable/button_bg"
             android:fontFamily="sans-serif-black"
-            android:text="Exit"
+            android:text="@string/exit_text"
             android:textColor="@color/colorWhiteBackground"
             android:textSize="24sp" />
     </LinearLayout>
@@ -69,7 +81,7 @@
         android:paddingTop="10dp"
         android:paddingEnd="30dp"
         android:paddingBottom="10sp"
-        android:text="Pause"
+        android:text="@string/pause_text"
 
         android:textColor="@color/colorBackground"
         android:textSize="45sp"

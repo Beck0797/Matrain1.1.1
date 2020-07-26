@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,15 +14,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PauseActivity"></activity>
-        <activity android:name=".LevelsActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".aboutTextActivity"></activity>
+        <activity android:name=".LocalRanking" />
+        <activity android:name=".ChooseRankingType" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PauseActivity" />
+        <activity android:name=".LevelsActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".FinishActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".LeaderBoardActivity" />
@@ -39,9 +42,13 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4935746575499843~3839682902" />
+            android:value="ca-app-pub-1915468079410759~4054680609" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

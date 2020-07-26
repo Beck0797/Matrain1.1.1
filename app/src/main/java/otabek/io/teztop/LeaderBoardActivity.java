@@ -1,7 +1,6 @@
 package otabek.io.teztop;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,11 +8,11 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,16 +22,11 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,46 +54,43 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
         Query firstQuery = mFirestore.collection("Scores").orderBy("score", Query.Direction.DESCENDING).limit(6);
 
-        firstQuery.addSnapshotListener(LeaderBoardActivity.this, new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+        firstQuery.addSnapshotListener(LeaderBoardActivity.this, (queryDocumentSnapshots, e) -> {
 
-                if (!queryDocumentSnapshots.isEmpty()) {
+            if (queryDocumentSnapshots != null && !queryDocumentSnapshots.isEmpty()) {
 
-                    if (isFirstPageFirstLoad) {
-                        lastVisible = queryDocumentSnapshots.getDocuments().get(queryDocumentSnapshots.size() - 1);
-                    }
+                if (isFirstPageFirstLoad) {
+                    lastVisible = queryDocumentSnapshots.getDocuments().get(queryDocumentSnapshots.size() - 1);
+                }
 
-                    for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()) {
+                for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()) {
 
-                        if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                    if (documentChange.getType() == DocumentChange.Type.ADDED) {
 
-//                                Log.i(TAG, "size : " + queryDocumentSnapshots.size());
+                        //                                Log.i(TAG, "size : " + queryDocumentSnapshots.size());
 
 
-                            Score score = documentChange.getDocument().toObject(Score.class);
+                        Score score = documentChange.getDocument().toObject(Score.class);
 
-//                            if list is in first page, new item is added to the end else to the beginning of the list
-                            if (isFirstPageFirstLoad) {
+                        //                            if list is in first page, new item is added to the end else to the beginning of the list
+                        if (isFirstPageFirstLoad) {
 
-                                mScoreList.add(score);
+                            mScoreList.add(score);
 
-                            } else {
+                        } else {
 
-                                mScoreList.add(0, score);
-
-                            }
-
-                            mScoreRecyclerAdapter.notifyDataSetChanged();
+                            mScoreList.add(0, score);
 
                         }
 
+                        mScoreRecyclerAdapter.notifyDataSetChanged();
 
                     }
 
-                    isFirstPageFirstLoad = false;
 
                 }
+
+                isFirstPageFirstLoad = false;
+
             }
         });
 
@@ -114,18 +105,20 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
     // Shows the Google Ad
     private void loadAd() {
+        MobileAds.initialize(this, initializationStatus -> Log.i(TAG, "onInitializationComplete: " + initializationStatus.toString()));
 
 
         if (mInterstitialAd.isLoaded()) {
 
             mInterstitialAd.show();
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mInterstitialAd.loadAd(adRequest);
+
             mInterstitialAd.setAdListener(new AdListener() {
+
                 @Override
                 public void onAdClosed() {
                     super.onAdClosed();
                     loadData();
+                    checkScrolling();
                 }
             });
             mProgressBar.setVisibility(View.INVISIBLE);
@@ -141,7 +134,10 @@ public class LeaderBoardActivity extends AppCompatActivity {
     public boolean isOnline() {
         ConnectivityManager cm =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        NetworkInfo netInfo = null;
+        if (cm != null) {
+            netInfo = cm.getActiveNetworkInfo();
+        }
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
@@ -149,6 +145,8 @@ public class LeaderBoardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_leader_board);
 
         if (!isOnline()) {
@@ -156,29 +154,12 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("In order to view Rankings, you need Internet connection. Do you want to turn on Wi-Fi")
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    }).setPositiveButton("Connect to Wi-fi", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
-                }
-            }).show();
+                    .setNegativeButton("Cancel", (dialog, which) -> finish()).setPositiveButton("Connect to Wi-fi", (dialog, which) -> startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS))).show();
 
 
         } else {
 
 
-            MobileAds.initialize(this, new OnInitializationCompleteListener() {
-                @Override
-                public void onInitializationComplete(InitializationStatus initializationStatus) {
-                    Log.i(TAG, "onInitializationComplete: " + initializationStatus.toString());
-                }
-
-            });
 
             mFirestore = FirebaseFirestore.getInstance();
             mFirebaseAuth = FirebaseAuth.getInstance();
@@ -190,7 +171,7 @@ public class LeaderBoardActivity extends AppCompatActivity {
             mScoreRecyclerAdapter = new ScoreRecyclerAdapter(mScoreList);
 
             mInterstitialAd = new InterstitialAd(this);
-            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+            mInterstitialAd.setAdUnitId("ca-app-pub-1915468079410759/3959597243");
 
             adRequest = new AdRequest.Builder().build();
 
@@ -211,23 +192,28 @@ public class LeaderBoardActivity extends AppCompatActivity {
             scoresRecyclerView.setAdapter(mScoreRecyclerAdapter);
 
 
-            //Check whether RecyclerView has reached bottom and if so loads more data from Firebase
-            scoresRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                @Override
-                public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                    super.onScrolled(recyclerView, dx, dy);
-
-                    reachedBottom = !recyclerView.canScrollVertically(1);
-
-                    if (reachedBottom) {
-//                    Toast.makeText(LeaderBoardActivity.this,"Reached bottom",Toast.LENGTH_SHORT).show();
-                        loadMore();
-                    }
-                }
-            });
+//            checkScrolling();
 
 
         }
+
+    }
+
+    private void checkScrolling() {
+        //Check whether RecyclerView has reached bottom and if so loads more data from Firebase
+        scoresRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                reachedBottom = !recyclerView.canScrollVertically(1);
+
+                if (reachedBottom) {
+//                    Toast.makeText(LeaderBoardActivity.this,"Reached bottom",Toast.LENGTH_SHORT).show();
+                    loadMore();
+                }
+            }
+        });
 
     }
 
@@ -237,33 +223,30 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
         Query nextQuery = mFirestore.collection("Scores").orderBy("score", Query.Direction.DESCENDING).startAfter(lastVisible).limit(6);
 
-        nextQuery.addSnapshotListener(LeaderBoardActivity.this, new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+        nextQuery.addSnapshotListener(LeaderBoardActivity.this, (queryDocumentSnapshots, e) -> {
 
 
-                if (!queryDocumentSnapshots.isEmpty()) {
+            if (queryDocumentSnapshots != null && !queryDocumentSnapshots.isEmpty()) {
 
 
-                    lastVisible = queryDocumentSnapshots.getDocuments().get(queryDocumentSnapshots.size() - 1);
+                lastVisible = queryDocumentSnapshots.getDocuments().get(queryDocumentSnapshots.size() - 1);
 
-                    for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()) {
-                        if (documentChange.getType() == DocumentChange.Type.ADDED) {
-//                                Log.i(TAG, "size : " + queryDocumentSnapshots.size());
+                for (DocumentChange documentChange : queryDocumentSnapshots.getDocumentChanges()) {
+                    if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                        //                                Log.i(TAG, "size : " + queryDocumentSnapshots.size());
 
 
-                            Score score = documentChange.getDocument().toObject(Score.class);
+                        Score score = documentChange.getDocument().toObject(Score.class);
 
-                            mScoreList.add(score);
-                            mScoreRecyclerAdapter.notifyDataSetChanged();
-
-                        }
-//                            Log.i(TAG, "onEvent: " + mSecretList.size());
+                        mScoreList.add(score);
+                        mScoreRecyclerAdapter.notifyDataSetChanged();
 
                     }
-
+                    //                            Log.i(TAG, "onEvent: " + mSecretList.size());
 
                 }
+
+
             }
         });
 
