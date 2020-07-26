@@ -1,6 +1,7 @@
 package otabek.io.teztop;
 
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,11 +37,13 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
         String username = scoreList.get(position).getUsername();
         int score = scoreList.get(position).getScore();
         String level = scoreList.get(position).getLevel();
+        Log.i(TAG, "onBindViewHolder: " + level);
+
 
 //        Log.i(TAG, "onBindViewHolder: "+scoreList.get(position).toString());
 
 
-        holder.setViewData(username, score, level);
+        holder.setViewData(username, score, position + 1, level);
 
     }
 
@@ -49,12 +52,13 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
         return scoreList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
-        public View mView;
-        public TextView usernameTextView;
-        public TextView levelTextView;
-        public TextView scoreTextView;
+        View mView;
+        TextView usernameTextView;
+        TextView levelTextView;
+        TextView scoreTextView;
+        TextView numberView;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -62,11 +66,13 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
             mView = itemView;
         }
 
-        public void setViewData(String username, int score, String level) {
+        public void setViewData(String username, int score, int number, String level) {
             usernameTextView = mView.findViewById(R.id.usernameTextRanking);
             levelTextView = mView.findViewById(R.id.levelTextRaning);
             scoreTextView = mView.findViewById(R.id.scoreTextRanking);
+            numberView = mView.findViewById(R.id.numberView);
 
+            numberView.setText(number + "");
             usernameTextView.setText(username);
             levelTextView.setText(level);
             scoreTextView.setText(score + "");

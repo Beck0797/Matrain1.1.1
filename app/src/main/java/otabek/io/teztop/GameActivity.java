@@ -1,11 +1,14 @@
 package otabek.io.teztop;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -21,135 +24,135 @@ import java.util.Random;
 public class GameActivity extends AppCompatActivity {
 
 
+    //  Global variables
     private static final String TAG = "bos";
-    TextView firstNum;
-    TextView secondNum;
-    TextView operatorSign;
-    TextView pauseBtn;
-    TextView userAnswerTextView;
-    SeekBar timerSeekBar;
-    int level = 1;
-    TextView currentLevelText;
-    Random random = new Random();
-    List<Integer> randomFourNumbers = new ArrayList<>();
-    int operatorNumber;
-    int answer;
-    TextView scoreTextView;
-    CountDownTimer mCountDownTimer;
+    public static Activity gameActivity;
+    private TextView firstNum;
+    private TextView secondNum;
+    private TextView operatorSign;
+    private TextView userAnswerTextView;
+    private SeekBar timerSeekBar;
+    private int level = 1;
+    private Random random = new Random();
+    private List<Integer> randomFourNumbers = new ArrayList<>();
+    private int answer;
+    private TextView scoreTextView;
     public static Boolean isSoundOn = true;
-    int score = 0;
-    String userAnswer = "";
-    String problem = "";
-    int userAnswerInt;
-    int timeLeft = 20000;
-    boolean isTimerWorking = false;
-    MediaPlayer mediaPlayer;
-    TableLayout mTableLayout;
-
-
+    private CountDownTimer mCountDownTimer;
+    private int score = 0;
+    private String userAnswer = "";
+    private String problem = "";
+    private int timeLeft = 20000;
+    private MediaPlayer mediaPlayer;
+    private TableLayout mTableLayout;
 
     public void numPressed(View view) {
+        if (userAnswer.length() < 5) {
 
-        switch (view.getId()) {
-            case R.id.minusSign: {
-                if (userAnswer.length() == 0) {
-                    userAnswer = userAnswer.concat("-");
+            switch (view.getId()) {
+                case R.id.minusSign: {
+                    if (userAnswer.length() == 0) {
+                        userAnswer = userAnswer.concat("-");
 
-                }
-                break;
-            }
-
-            case R.id.oneNum: {
-                userAnswer = userAnswer.concat("1");
-                break;
-            }
-            case R.id.twoNum: {
-                userAnswer = userAnswer.concat("2");
-                break;
-            }
-            case R.id.threeNum: {
-                userAnswer = userAnswer.concat("3");
-                break;
-            }
-            case R.id.fourNum: {
-                userAnswer = userAnswer.concat("4");
-                break;
-            }
-            case R.id.fiveNum: {
-                userAnswer = userAnswer.concat("5");
-                break;
-            }
-            case R.id.sixNum: {
-                userAnswer = userAnswer.concat("6");
-                break;
-            }
-            case R.id.sevenNum: {
-                userAnswer = userAnswer.concat("7");
-                break;
-            }
-            case R.id.eightNum: {
-                userAnswer = userAnswer.concat("8");
-                break;
-            }
-            case R.id.nineNum: {
-                userAnswer = userAnswer.concat("9");
-                break;
-            }
-            case R.id.zeroNum: {
-                userAnswer = userAnswer.concat("0");
-                break;
-            }
-            case R.id.delBtn: {
-                if (userAnswer != null && !userAnswer.isEmpty()) {
-                    userAnswer = userAnswer.substring(0, userAnswer.length() - 1);
+                    }
                     break;
                 }
-                break;
 
-
-            }
-            case R.id.okBtn: {
-                if (userAnswer != null && !userAnswer.isEmpty()) {
-                    if (userAnswer.length() < 7) {
-                        userAnswerInt = Integer.parseInt(userAnswer);
-                        userAnswerTextView.setText("");
-                        userAnswer = "";
-                        checkAnswer(userAnswerInt);
+                case R.id.oneNum: {
+                    userAnswer = userAnswer.concat("1");
+                    break;
+                }
+                case R.id.twoNum: {
+                    userAnswer = userAnswer.concat("2");
+                    break;
+                }
+                case R.id.threeNum: {
+                    userAnswer = userAnswer.concat("3");
+                    break;
+                }
+                case R.id.fourNum: {
+                    userAnswer = userAnswer.concat("4");
+                    break;
+                }
+                case R.id.fiveNum: {
+                    userAnswer = userAnswer.concat("5");
+                    break;
+                }
+                case R.id.sixNum: {
+                    userAnswer = userAnswer.concat("6");
+                    break;
+                }
+                case R.id.sevenNum: {
+                    userAnswer = userAnswer.concat("7");
+                    break;
+                }
+                case R.id.eightNum: {
+                    userAnswer = userAnswer.concat("8");
+                    break;
+                }
+                case R.id.nineNum: {
+                    userAnswer = userAnswer.concat("9");
+                    break;
+                }
+                case R.id.zeroNum: {
+                    userAnswer = userAnswer.concat("0");
+                    break;
+                }
+                case R.id.delBtn: {
+                    if (userAnswer != null && !userAnswer.isEmpty()) {
+                        userAnswer = userAnswer.substring(0, userAnswer.length() - 1);
+                        break;
                     }
+                    break;
+
+
+                }
+                case R.id.okBtn: {
+                    if (userAnswer != null && !userAnswer.isEmpty()) {
+                        if (userAnswer.length() < 7) {
+                            int userAnswerInt = Integer.parseInt(userAnswer);
+                            userAnswerTextView.setText("");
+                            userAnswer = "";
+                            checkAnswer(userAnswerInt);
+                        }
+                    }
+
+
+                    break;
                 }
 
-
-                break;
+                default:
+                    Log.i(TAG, "default");
+                    break;
             }
 
-            default:
-                Log.i(TAG, "default");
-                break;
+            userAnswerTextView.setText(userAnswer);
         }
-
-        userAnswerTextView.setText(userAnswer);
-//        problem = problem.concat(userAnswer);
-//        problemPrompt.setText(problem);
-//        Log.i(TAG, "numPressed: " + problem);
-//        userAnswer = "";
 
 
     }
 
     private void checkAnswer(int userAnswerInt) {
-//        Log.i(TAG, "checkAnswer: " + userAnswerInt);
+
+
         if (userAnswerInt == answer) {
+            if (level == 1) {
+                score++;
+            } else if (level == 2) {
+                score += 2;
+            } else if (level == 3) {
+                score += 3;
+            }
 
             mediaPlayer = MediaPlayer.create(this, R.raw.correct);
 //            Log.i(TAG, "checkAnswer: correct");
-            score++;
+
 
             timeLeft += 2000;
             mCountDownTimer.cancel();
             setTimer();
 
             scoreTextView.setText(String.valueOf(score));
-            problemGenerator();
         } else {
 
             timeLeft -= 1000;
@@ -157,8 +160,8 @@ public class GameActivity extends AppCompatActivity {
             setTimer();
             mediaPlayer = MediaPlayer.create(this, R.raw.wrong);
 //            Log.i(TAG, "checkAnswer: wrong");
-            problemGenerator();
         }
+        problemGenerator();
         if (isSoundOn) {
             mediaPlayer.start();
         }
@@ -167,7 +170,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void setTimer() {
 //        Log.i(TAG, "setTimer: called ");
-        isTimerWorking = true;
+
         mCountDownTimer = new CountDownTimer(timeLeft, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -182,7 +185,7 @@ public class GameActivity extends AppCompatActivity {
                 problem = "";
                 userAnswer = "";
 
-                isTimerWorking = false;
+
                 if (isSoundOn) {
                     mediaPlayer = MediaPlayer.create(GameActivity.this, R.raw.complete);
                     mediaPlayer.start();
@@ -209,6 +212,7 @@ public class GameActivity extends AppCompatActivity {
         randomFourNumbers.add(random.nextInt((99) + 1) + 1);
         String num1 = randomFourNumbers.get(0).toString();
         String num2 = randomFourNumbers.get(1).toString();
+        int operatorNumber;
         switch (level) {
 
             case 1: {
@@ -245,6 +249,8 @@ public class GameActivity extends AppCompatActivity {
 
             }
             case 3: {
+                int hardNumber = random.nextInt((10 - 1) + 1) + 1;
+
 
                 operatorNumber = random.nextInt(4);
                 switch (operatorNumber) {
@@ -269,19 +275,33 @@ public class GameActivity extends AppCompatActivity {
                     case 2: {
 
                         firstNum.setText(num1);
-                        secondNum.setText(num2);
+                        secondNum.setText(String.valueOf(hardNumber));
                         operatorSign.setText("*");
-                        answer = randomFourNumbers.get(0) * randomFourNumbers.get(1);
+
+                        answer = randomFourNumbers.get(0) * hardNumber;
                         break;
+
 
                     }
 
+                    case 3: {
+                        if (randomFourNumbers.get(0) % randomFourNumbers.get(1) == 0) {
+
+                            firstNum.setText(num1);
+                            secondNum.setText(num2);
+                            operatorSign.setText("/");
+
+                            answer = randomFourNumbers.get(0) / randomFourNumbers.get(1);
+
+                        }
+
+                        break;
+                    }
                 }
                 break;
 
             }
             default:
-                operatorNumber = random.nextInt(1);
                 Log.i(TAG, "default problem generator");
                 break;
 
@@ -291,20 +311,22 @@ public class GameActivity extends AppCompatActivity {
         problem = problem.concat("=");
 
 
-
     }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_game_layout);
 //        Log.i(TAG, "time " + timeLeft);
 
-        pauseBtn = findViewById(R.id.pauseBtn);
+        gameActivity = this;
+
+        TextView pauseBtn = findViewById(R.id.pauseBtn);
         timerSeekBar = findViewById(R.id.timerSeekBar);
-        currentLevelText = findViewById(R.id.modeTextView);
+        TextView currentLevelText = findViewById(R.id.modeTextView);
         scoreTextView = findViewById(R.id.scoreTextview);
         firstNum = findViewById(R.id.firstNumber);
         secondNum = findViewById(R.id.secondNumber);
@@ -343,13 +365,7 @@ public class GameActivity extends AppCompatActivity {
 
 
         pauseBtn.setOnClickListener(v -> {
-            mCountDownTimer.cancel();
-
-            Intent pauseIntent = new Intent(GameActivity.this, PauseActivity.class);
-            pauseIntent.putExtra("score", score);
-            pauseIntent.putExtra("timeLeft", timeLeft);
-            pauseIntent.putExtra("sound", isSoundOn);
-            startActivity(pauseIntent);
+            pauseTheGame();
         });
 
 
@@ -388,5 +404,23 @@ public class GameActivity extends AppCompatActivity {
             }
 
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            pauseTheGame();
+            return true;
+        }
+        return false;
+    }
+
+    private void pauseTheGame() {
+        mCountDownTimer.cancel();
+        Intent pauseIntent = new Intent(GameActivity.this, PauseActivity.class);
+        pauseIntent.putExtra("score", score);
+        pauseIntent.putExtra("timeLeft", timeLeft);
+        pauseIntent.putExtra("sound", isSoundOn);
+        startActivity(pauseIntent);
     }
 }

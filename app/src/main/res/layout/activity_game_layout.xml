@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
-            android:text="+"
+            android:text="@string/plus_sign_text"
             android:textColor="@color/colorBackground"
             android:textSize="56sp"
             app:layout_constraintStart_toEndOf="@+id/firstNumber"
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
-            android:text="="
+            android:text="@string/equal_sign_text"
             android:textColor="@color/colorBackground"
             android:textSize="56sp"
             app:layout_constraintStart_toEndOf="@+id/secondNumber"
@@ -85,7 +85,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
-            android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/colorBackground"
             android:textSize="56sp"
@@ -115,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="0"
+        android:text="@string/zero_num_text"
 
         android:textSize="24sp"
         android:background="@drawable/layout_bg"
@@ -132,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="||"
+        android:text="@string/pause_sign_text"
 
         android:textSize="24sp"
         android:background="@drawable/layout_bg"
@@ -175,7 +174,7 @@
                 android:fontFamily="sans-serif-black"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="—"
+                android:text="@string/minus_sign_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
         </TableRow>
@@ -195,7 +194,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="1"
+                android:text="@string/one_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -210,7 +209,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="2"
+                android:text="@string/two_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -225,7 +224,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="3"
+                android:text="@string/three_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
         </TableRow>
@@ -245,7 +244,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="4"
+                android:text="@string/four_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -260,7 +259,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="5"
+                android:text="@string/five_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -275,7 +274,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="6"
+                android:text="@string/six_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
         </TableRow>
@@ -295,7 +294,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="7"
+                android:text="@string/seven_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -310,7 +309,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="8"
+                android:text="@string/eight_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -325,7 +324,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="9"
+                android:text="@string/nine_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -337,8 +336,8 @@
 
             <Button
                 android:id="@+id/delBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:background="@drawable/button_bg"
@@ -346,7 +345,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="del"
+                android:text="@string/del_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 
@@ -361,7 +360,7 @@
                 android:gravity="center"
                 android:onClick="numPressed"
                 android:padding="8dp"
-                android:text="0"
+                android:text="@string/zero_num_text"
                 android:textColor="@color/colorWhiteBackground"
                 android:textSize="26sp" />
 

@@ -12,29 +12,31 @@
         android:id="@+id/logoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:background="@drawable/layout_bg"
         android:fontFamily="sans-serif-black"
         android:paddingLeft="50dp"
         android:paddingTop="20dp"
         android:paddingRight="50dp"
         android:paddingBottom="20dp"
-        android:text="Matrain"
+        android:text="@string/matrain_text"
         android:textColor="@color/colorBackground"
-        android:textSize="50dp"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
         android:background="@drawable/layout_bg"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoText">
 
@@ -44,9 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
-            android:text="Enter your name"
+            android:text="@string/enter_your_name"
             android:textColor="@color/colorBackground"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/usernameEdittext"
@@ -56,11 +58,13 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
+            android:autofillHints=""
             android:fontFamily="sans-serif-black"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/colorBackground"
-            android:textSize="30dp" />
+            android:textSize="30sp"
+            tools:ignore="LabelFor" />
 
     </RelativeLayout>
 

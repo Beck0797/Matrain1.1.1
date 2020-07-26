@@ -1,2 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Matrain</string>
+    <string name="about_logo_text">О игре</string>
+    <string name="share_text">Поделиться</string>
+    <string name="level_text">Уровень</string>
+    <string name="score_text">Счет</string>
+    <string name="loading_ad_text">Загрузка  . . .</string>
+    <string name="easy_text">Легкий</string>
+    <string name="hard_text">" Сложный"</string>
+    <string name="medium_text">Средний</string>
+    <string name="get_ready_text">Приготовься</string>
+    <string name="new_game_text">Новая игра</string>
+    <string name="rankings_text">Рейтинг</string>
+    <string name="exit_text">Выйти</string>
+    <string name="resume_text">Продолжить</string>
+    <string name="restart_text">Начать сначала</string>
+    <string name="pause_text">Пауза</string>
+    <string name="enter_your_name">Введите свое имя</string>
+    <string name="play_again_text">Играть Снова</string>
+    <string name="main_menu_text">Главное меню</string>
+    <string name="username_text">"Имя: "</string>
+    <string name="global_text">Мировой</string>
+    <string name="local_text">Местный</string>
+    <string name="username_length_warning">Длина имени пользователя не должна превышать 10 букв</string>
+    <string name="edit_username_message">Длительное нажатие для редактирования имени пользователя</string>
+    <string name="share_message1">«Привет !!!. Проверьте мой счет в приложении Matrain.</string>
+    <string name="instructions_text">инструкции</string>
+    <string name="about_text">О игре</string>
+    <string name="share_message2">Позвольте мне рекомендовать вам это приложение</string>
+    <string name="share_score_text">Поделиться счет</string>
+</resources>

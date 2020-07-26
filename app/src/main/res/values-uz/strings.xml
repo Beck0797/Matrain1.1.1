@@ -1,2 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Tez top</string>
+    <string name="level_text">Bosqichlar</string>
+    <string name="score_text">Hisob</string>
+    <string name="loading_ad_text">Yuklanmoqda ...</string>
+    <string name="easy_text">Oson</string>
+    <string name="medium_text">O\'rtacha</string>
+    <string name="hard_text">Qiyin</string>
+    <string name="get_ready_text">Tayyorlan</string>
+    <string name="new_game_text">Yangi o\'yin</string>
+    <string name="rankings_text">Reyting</string>
+    <string name="exit_text">Chiqish</string>
+    <string name="resume_text">Davom ettirish</string>
+    <string name="restart_text">Boshidan boshlash</string>
+    <string name="pause_text">Pauza</string>
+    <string name="enter_your_name">Ismingizni kiriting</string>
+    <string name="play_again_text">Yana o\'ynash</string>
+    <string name="main_menu_text">Asosiy Menyu</string>
+    <string name="about_logo_text">Haqida</string>
+    <string name="share_text">Ulashish</string>
+    <string name="username_text">"Ism: "</string>
+    <string name="local_text">Shahsiy</string>
+    <string name="global_text">Global</string>
+    <string name="username_length_warning">Ism uzunligi 10 harfdan oshmasligi lozim</string>
+    <string name="edit_username_message">Ismni o\'zgartirish uchun bosib turing</string>
+    <string name="share_message1">Salom !!!. Mening Matrain deb nomlangan ajoyib o\'yindagi rekordimni tekshirib ko\'ring.</string>
+    <string name="share_message2">"O'yinga havola: "</string>
+    <string name="share_score_text">Hisobni ulashish</string>
+    <string name="instructions_text">Qo\'llanma</string>
+    <string name="about_text">Haqida</string>
+</resources>

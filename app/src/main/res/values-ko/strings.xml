@@ -1,2 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Matrain</string>
+    <string name="about_logo_text">대한</string>
+    <string name="share_text">공유</string>
+    <string name="level_text">수평</string>
+    <string name="score_text">점수</string>
+    <string name="loading_ad_text">로딩</string>
+    <string name="easy_text">쉬운</string>
+    <string name="medium_text">중</string>
+    <string name="hard_text">단단한</string>
+    <string name="get_ready_text">준비해</string>
+    <string name="new_game_text">새로운 게임</string>
+    <string name="rankings_text">순위</string>
+    <string name="exit_text">출구</string>
+    <string name="resume_text">이력서</string>
+    <string name="restart_text">재시작</string>
+    <string name="pause_text">중지</string>
+    <string name="enter_your_name">당신의 이름을 입력</string>
+    <string name="username_text">"사용자 이름: "</string>
+    <string name="play_again_text">다시 재생</string>
+    <string name="main_menu_text">메인 메뉴</string>
+    <string name="global_text">글로벌</string>
+    <string name="local_text">현지</string>
+    <string name="username_length_warning">사용자 이름 길이는 10자를 초과 할 수 없습니다</string>
+    <string name="edit_username_message">길게 누르면 사용자 이름을 편집 할 수 있습니다</string>
+    <string name="share_message1">\"안녕하세요 !!!. Matrain의 멋진 응용 프로그램에서 내 점수를 확인하십시오. 내 점수는\"</string>
+    <string name="instructions_text">명령</string>
+    <string name="about_text">약</string>
+    <string name="share_message2">이 응용 프로그램을 추천하겠습니다</string>
+    <string name="share_score_text">공유 점수</string>
+
+</resources>
