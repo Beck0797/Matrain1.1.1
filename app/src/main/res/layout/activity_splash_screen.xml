@@ -38,7 +38,7 @@
         android:fontFamily="@font/lobster"
         android:text="Train your Brain"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
