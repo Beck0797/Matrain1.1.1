@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tez top</string>
     <string name="level_text">Bosqichlar</string>
     <string name="score_text">Hisob</string>
     <string name="loading_ad_text">Yuklanmoqda ...</string>
     <string name="easy_text">Oson</string>
-    <string name="medium_text">O\'rtacha</string>
+    <string name="medium_text">O\'rta</string>
     <string name="hard_text">Qiyin</string>
     <string name="get_ready_text">Tayyorlan</string>
     <string name="new_game_text">Yangi o\'yin</string>
@@ -29,4 +28,15 @@
     <string name="share_score_text">Hisobni ulashish</string>
     <string name="instructions_text">Qo\'llanma</string>
     <string name="about_text">Haqida</string>
+    <string name="about_instructions"> Matrain uchta etapdan iborat: oson, o\'rta va qiyin. Har bir bosqichda sizga 20 soniya vaqt beriladi. Umumiy vaqtga, har bir to\'g\'ri javob uchun 2 soniya qo\'shiladi, va har bir noto\'g\'ri javob uchun 1 soniya ayrib tashlanadi. Har bir etapda turli xil arifmetik operatorlar foydalanadi va har bir to\'gri javob uchun har xil miqdorda ball beriladi \n Oson + \t \t \t \t \t \t \t 1 \n  O\'rta - + \t \t \t \t \t 2  \n Qiyin -  +  /  * \t \t \t \t \t 3</string>
+    <string name="ranking_text">Reyting</string>
+    <string name="game_text">Dastur</string>
+    <string name="about_matrain">"Matematika bizning hayotimizning ajralmas qismidir. U sizga kuningizni rejalashtirishingizda ham, oddiy harid qilishingizda ham birdek kerak boladi. Ba'zan esa biz har kungi oddiy va sodda bo’lgan hisob kitoblarni bajarishda qiyinchiliklarga duch kelamiz va kalkulyatorlardan foydalanishni boshlaymiz. Matrain - bu oddiy matematik o'yin bo'lib, u sizning arifmetik amallar bajarish ko'nikmalaringizni oson va qiziqarli shaklda rivojlantirish uchun yaratilgan. Buning uchun sizdan talab etiladigan narsa faqatgina kuningizning bir necha daqiqasini shu matematikangizni rivojlantirish  uchun   sarflashingiz bas. Va oxir-oqibat siz oziq-ovqat ro'yxatidagi mahsulotlarni sotib olish uchun qancha pul kerakligini bilish uchun kalkulyator yordamiga muhtoj bo’lmaysiz. "</string>
+    <string name="about_ranking">Matrain ikkita reyting jadvalidan iborat: global va lokal. Global reytingda butun dunyo bo\'ylab foydalanuvchilarning reytingi bo\'ladi. O\'zingizning reytingingizni global reytinga ulashish uchun siz Internetga ulangan bo’lishingiz lozim. (* Bu funktsiya faqatgina natijangiz beshdan yuqori bo’lsagina mavjud bo’ladi ). Sizning global reytingdagi o’rningiz sizning ballaringiz soniga qarab reytinga joylashtiriladi. Sizning ballingiz qancha yuqori bo\'lsa, reytingdagi o’rningiz shuncha yuqori bo\'ladi. Lokal reytingda esa, sizning ballaringiz avtomatik ravishda qo\'shiladi va ushbu reyting taxtasiga kirish uchun siz Internet tarmog’iga ulanishingiz shart emas.</string>
+    <string name="mode_text">"Bosqich: "</string>
+    <string name="your_score_is_text">"Sizning natijangiz: "</string>
+    <string name="score_shared_message">Sizning natijangiz dunyo reytingiga qo\'shildi.</string>
+    <string name="clear_local_ranking_notif">Sizning shahsiy reyting ma\'lumotlaringiz o\'chirildi</string>
+    <string name="clear_text">Tozalash</string>
+    <string name="ochkov">" "</string>
 </resources>

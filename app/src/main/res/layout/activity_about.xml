@@ -29,7 +29,7 @@
             android:background="@drawable/button_bg"
             android:fontFamily="sans-serif-black"
             android:onClick="callFragment"
-            android:text="Instructions"
+            android:text="@string/instructions_text"
             android:textColor="@color/colorWhiteBackground"
             android:textSize="24sp" />
 
@@ -43,7 +43,7 @@
             android:background="@drawable/button_bg"
             android:fontFamily="sans-serif-black"
             android:onClick="callFragment"
-            android:text="Ranking"
+            android:text="@string/ranking_text"
             android:textColor="@color/colorWhiteBackground"
             android:textSize="24sp" />
 
@@ -57,7 +57,7 @@
             android:background="@drawable/button_bg"
             android:fontFamily="sans-serif-black"
             android:onClick="callFragment"
-            android:text="Game"
+            android:text="@string/game_text"
             android:textColor="@color/colorWhiteBackground"
             android:textSize="24sp" />
 

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="otabek.io.teztop">
+    package="com.beck.matrain">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,34 +12,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".aboutTextActivity"></activity>
-        <activity android:name=".LocalRanking" />
-        <activity android:name=".ChooseRankingType" />
-        <activity android:name=".SplashScreen">
+        <activity
+            android:name="com.beck.matrain.aboutTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.LocalRanking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.ChooseRankingType"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PauseActivity" />
-        <activity android:name=".LevelsActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".FinishActivity" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".LeaderBoardActivity" />
-        <activity android:name=".GameActivity" />
-        <activity android:name=".MainActivity" />
-
-        <provider
-            android:name=".GenericFileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
+        <activity
+            android:name="com.beck.matrain.PauseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.LevelsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.FinishActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.LeaderBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.GameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.beck.matrain.MainActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

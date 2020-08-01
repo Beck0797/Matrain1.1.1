@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Matrain</string>
+    <string name="app_name" translatable="false">Matrain</string>
     <string name="about_logo_text">About</string>
     <string name="share_text">Share</string>
     <string name="equal_sign_text" translatable="false">=</string>
@@ -39,19 +39,25 @@
     <string name="global_text">Global</string>
     <string name="username_length_warning">Username length should not exceed 10 letters</string>
     <string name="edit_username_message">Long press to edit username</string>
-    <string name="share_message1">\"Hello !!!. Check out my score from Matrain awesome app. My score is \"</string>
+    <string name="share_message1">"Hello !!!. Check out my score from Matrain awesome app. My score is "</string>
     <string name="share_message2">" Let me recommend you this application  "</string>
     <string name="share_score_text">Share score</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="about_matrain" translatable="false">Math is an essential part of our lives. It is everywhere, starting from planning your day to doing simple grocery shopping. Sometimes we feel difficulties in calculating those daily simple math operations and start using calculators which may cause inconvenience and decrease our performance. Matrain is simple math game that’s designed to develop your arithmetic operations skills in an easy and fun way. All you need to do is to spend several minutes of your day to practice your math and eventually, you won’t need to look for a calculator to know how much money you will need to buy the products in the grocery list.</string>
-    <string name="about_instructions" translatable="false">Matrain consists of three levels: easy, medium, and hard. In each level, you will be given 20 seconds. For every correct answer, 2 seconds will be added whereas 1 second is subtracted for a wrong answer from the total time. Every level uses different arithmetic operators and scoring policies.\n 	Operator \t \t \t \t \t Points \n
-Easy + \t \t \t \t \t \t \t 1 \n
-Medium - + \t \t \t \t \t 2 \n
-Hard -  +  /  * \t \t \t \t \t3
-</string>
-    <string name="about_ranking" translatable="false">Matrain has two ranking boards: global and local. In the global ranking, there will be users’ scores all over the world. You need to have an internet connection to check or share your score to the global ranking. In the end of each game, you will be asked if you want to share your score globally (*this option is available if only your score is higher than 5 points). Your global rank will be placed based on your points. The higher your score, the higher your rank. The local ranking uses the same ranking policy as global. However, your scores will automatically be added to local ranking and you don’t need an internet connection to access this ranking board.</string>
+    <string name="about_matrain">Math is an essential part of our lives. It is everywhere, starting from planning your day to doing simple grocery shopping. Sometimes we feel difficulties in calculating those daily simple math operations and start using calculators which may cause inconvenience and decrease our performance. Matrain is simple math game that’s designed to develop your arithmetic operations skills in an easy and fun way. All you need to do is to spend several minutes of your day to practice your math and eventually, you won’t need to look for a calculator to know how much money you will need to buy the products in the grocery list.</string>
+    <string name="about_instructions">"Matrain consists of three levels: easy, medium, and hard. In each level, you will be given 20 seconds. For every correct answer, 2 seconds will be added whereas 1 second is subtracted for a wrong answer from the total time. Every level uses different arithmetic operators and scoring policies.  \t Operator \t \t \t \t \t Points   1 "</string>
+    <string name="about_ranking">Matrain has two ranking boards: global and local. In the global ranking, there will be users’ scores all over the world. You need to have an internet connection to check or share your score to the global ranking. In the end of each game, you will be asked if you want to share your score globally (*this option is available if only your score is higher than 5 points). Your global rank will be placed based on your points. The higher your score, the higher your rank. The local ranking uses the same ranking policy as global. However, your scores will automatically be added to local ranking and you don’t need an internet connection to access this ranking board.</string>
     <string name="instructions_text">Instructions</string>
     <string name="about_text">About</string>
+    <string name="ranking_text">Ranking</string>
+    <string name="game_text">Game</string>
+    <string name="your_score_is_text">"Your score is: "</string>
+    <string name="mode_text">Mode:</string>
+    <string name="go_text" translatable="false">GO !!!</string>
+    <string name="score_shared_message">\"Your score has been shared with the world\"</string>
+    <string name="clear_local_ranking_notif">Your local scores has been cleared</string>
+    <string name="clear_text">Clear</string>
+    <string name="ochkov">" "</string>
+    <string name="math_train_text" translatable="false">Math Training</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
