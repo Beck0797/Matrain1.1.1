@@ -39,5 +39,8 @@
     <string name="clear_local_ranking_notif">Your local scores has been cleared</string>
     <string name="clear_text">Clear</string>
     <string name="ochkov">" "</string>
+    <string name="no_internet_notif">In order to view Global Rankings, you need Internet connection. Do you want to turn on Wi-Fi?</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="connect_to_wifi">Connect to Wi-fi</string>
 
 </resources>

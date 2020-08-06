@@ -83,14 +83,12 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
                 }
                 case 2: {
                     levelString = mView.getContext().getString(R.string.medium_text);
-                    ;
                     break;
                 }
 
                 case 3: {
-
                     levelString = mView.getContext().getString(R.string.hard_text);
-                    ;
+
                     break;
                 }
                 default: {

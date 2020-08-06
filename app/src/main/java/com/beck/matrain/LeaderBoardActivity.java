@@ -152,8 +152,8 @@ public class LeaderBoardActivity extends AppCompatActivity {
 
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("In order to view Rankings, you need Internet connection. Do you want to turn on Wi-Fi")
-                    .setNegativeButton("Cancel", (dialog, which) -> finish()).setPositiveButton("Connect to Wi-fi", (dialog, which) -> startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS))).show();
+            builder.setMessage(R.string.no_internet_notif)
+                    .setNegativeButton(R.string.cancel_text, (dialog, which) -> finish()).setPositiveButton(R.string.connect_to_wifi, (dialog, which) -> startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS))).show();
 
 
         } else {

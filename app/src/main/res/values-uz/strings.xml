@@ -39,4 +39,7 @@
     <string name="clear_local_ranking_notif">Sizning shahsiy reyting ma\'lumotlaringiz o\'chirildi</string>
     <string name="clear_text">Tozalash</string>
     <string name="ochkov">" "</string>
+    <string name="cancel_text">Bekor qilish</string>
+    <string name="connect_to_wifi">Wi_Fi ni yoqish</string>
+    <string name="no_internet_notif">Internet mavjud emas.</string>
 </resources>

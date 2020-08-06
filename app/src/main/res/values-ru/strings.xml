@@ -38,4 +38,7 @@
     <string name="clear_local_ranking_notif">Ваш локальный рейтинг был очищен</string>
     <string name="clear_text">Очистить</string>
     <string name="ochkov">Очков</string>
+    <string name="no_internet_notif">Для просмотра глобального рейтинга вам необходимо подключиться к Интернету. Вы хотите включить Wi-Fi?</string>
+    <string name="cancel_text">Отмена</string>
+    <string name="connect_to_wifi">Подключиться к Wi-Fi</string>
 </resources>

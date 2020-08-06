@@ -39,5 +39,8 @@
     <string name="clear_text">명확한</string>
     <string name="ochkov">" "</string>
     <string name="clear_local_ranking_notif">지역 순위가 삭제되었습니다</string>
+    <string name="no_internet_notif">글로벌 랭킹을 보려면 인터넷 연결이 필요합니다. Wi-Fi를 켜시겠습니까</string>
+    <string name="cancel_text">취소</string>
+    <string name="connect_to_wifi">Wi-Fi에 연결</string>
 
 </resources>
