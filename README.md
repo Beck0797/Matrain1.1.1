@@ -1,4 +1,4 @@
-# Matrain1.1.1
+# Matrain1.1.1 (https://play.google.com/store/apps/details?id=com.beck.matrain) 
 Updated version
 Math is an essential part of our lives. It is everywhere, starting from planning your day to doing simple grocery shopping. Sometimes we feel difficulties in calculating those 
 daily simple math operations and start using calculators which may cause inconvenience and decrease our performance. Matrain is simple math game that’s designed to develop your
@@ -14,4 +14,4 @@ Matrain has two ranking boards: global and local. In the global ranking, there w
 world. You need to have an internet connection to check or share your score to the global ranking. In the end of each game, you will be asked if you want to share your score 
 globally (*this option is available if only your score is higher than 5 points). Your global rank will be placed based on your points. The higher your score, the higher your 
 rank. The local ranking uses the same ranking policy as global. However, your scores will automatically be added to local ranking and you don’t need an internet connection to 
-access this ranking board.README.md
+access this ranking board.
